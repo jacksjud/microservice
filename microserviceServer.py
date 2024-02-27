@@ -182,10 +182,11 @@ def request_handler():
         # Send Ack immediately
         ack = "True"
         rep_socket.send(ack.encode())
-        print("== ack sent ==")
+        print("== ACK sent ==")
 
         # Get data to send
         responseInfo = calculate_response(locationInfo)
+        print("== Published Data ==")
         
         # Publish data
         pub_socket.send_json(responseInfo)

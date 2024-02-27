@@ -12,7 +12,7 @@ const express = require('express'); // Or whatever you use
 const app = express();
 
 var exphbs = require("express-handlebars")
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 2000
 app.use(express.static('static'))
 
 app.get('/microservice/data', async function(req, res){    // This should be catching a request from your index.js file (browser-environment JS)
@@ -47,12 +47,12 @@ app.get('/microservice/data', async function(req, res){    // This should be cat
 })
 
 app.get('/', function(req, res){
-    res.render("index")
+    res.render("static/index")
     next()
 })
 
 app.get('*', function (req, res) { 
-    res.status(404).render("404")
+    res.status(404).render("/static/404")
 })
 
 
@@ -76,13 +76,8 @@ async function subResponse() {
 }
 
 
-// Just to show that this shouldn't interfere with other things in the server's functionality 
-console.log('Request sent, continue work...');
-
-
-
-app.listen(3000, () => {
-    console.log("== Server Listening on Port 3000")
+app.listen(port, () => {
+    console.log("== Server Listening on Port ", port)
 })
 
 
