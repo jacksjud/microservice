@@ -178,7 +178,7 @@ def request_handler():
         # Get python object (whatever sent) - serializing using json
         print("== While Loop Running ==")
         locationInfo = rep_socket.recv_json()
-        print(f"Message received from microserviceClient.py\n")
+        print("Message received from Client")
         # Send Ack immediately
         ack = "True"
         rep_socket.send(ack.encode())

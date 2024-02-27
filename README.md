@@ -22,7 +22,10 @@ index.handlebars        == An example webpage for the browser-side use - keep in
 
 # PYTHON3 --
 
-    * Assuming you have imported zmq 
+    * Assuming you have imported zmq
+     
+    You'll start by declaring and connecting your request socket(s). You'll also want to define your data in the 
+    format shown. Then, you will send it as shown below, and receive the acknowledgement.
 
     # REQUEST ===================================================================================================
 
@@ -41,6 +44,9 @@ index.handlebars        == An example webpage for the browser-side use - keep in
 
     ============================================================================================================
 
+    You'll start by declaring and connecting your subscribe socket. You'll then receive the data. In context,
+    you'll most likely want to put the receiving data element in a loop that coninuously checks for data. This
+    is easily implemented, and examples are shown in the client files.
     # RECEIVE ==================================================================================================
 
     sub_socket = context.socket(zmq.SUB)        # Needed
@@ -53,6 +59,18 @@ index.handlebars        == An example webpage for the browser-side use - keep in
 
 
 # JAVASCRIPT/NODE.JS --
+
+    To implement this microservice so that your browser/an action from your browser can call it, you'll need
+    to include something like what is shown below in the -BROWSER SIDE section. The '/microservice/data' would
+    be whatever link you decide within your server. You will most likely want to actually get data from the browser
+    (such as lat and long), which is easy to do, but not implemented in the examples. 
+    The server portion of this implementation is given below, where you'll create a new request socket, connect it,
+    and send the request with data you are responsible for attaining and putting in the provided form:
+
+    {"latitude": <latitude>, "longitude": <longitude>}
+
+    Where <latitude> and <longitude> are your own variables/coordinates.
+
     # REQUEST ==================================================================================================
 
     - BROWSER SIDE
@@ -82,6 +100,11 @@ index.handlebars        == An example webpage for the browser-side use - keep in
         })
 
     ============================================================================================================
+
+    You'll need to add a few things to the function provided above, and you'll need to add a function (or not, if
+    you don't care about it being asynchronous) that creates a subscription socket, connects it, and gets the
+    first bit of data it can. The code you'll need to add is what is responsible for getting that data back to
+    the browser, so if you aren't interested in that, don't worry about it.
 
     # RECEIVE ==================================================================================================
 
