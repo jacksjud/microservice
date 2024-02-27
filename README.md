@@ -108,4 +108,4 @@ index.handlebars        == An example webpage for the browser-side use - keep in
 
 
 # UML DIAGRAM
-![UML DIAGRAM](https://file%2B.vscode-resource.vscode-cdn.net/Users/judahjackson/CS361/microservice/UML2.drawio.png?version%3D1708992399918)
+[UML DIAGRAM](UML2.drawio.png)
