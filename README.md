@@ -8,14 +8,14 @@ Gets average weather data given specified latitude and longitude,does this by us
 # COMMUNICATION CONTRACT ===================================================================================================
 
 NOTE: Full code examples are provided, here are what each of them are:
-microserviceServer.py   ==  The actual microservice/project. 
-microserviceClient.py   ==  An example of interacting with the microservice using Python3
-serverExample.js        ==  An example of interacting with the microservice using JavaScript/Node.js.
+- microserviceServer.py   ==  The actual microservice/project. 
+- microserviceClient.py   ==  An example of interacting with the microservice using Python3
+- serverExample.js        ==  An example of interacting with the microservice using JavaScript/Node.js.
                             If you are running a server for web browsing, and want to use the functions
                             of the microservice in your browser, this will be very helpful to you.
-index.js                == An example of the browser-side JavaScript you would use for the above functionality.
-index.handlebars        == An example webpage for the browser-side use - keep in 'static' directory.
-404.handlebars          == 404 page for example - keep in 'static' directory.
+- index.js                == An example of the browser-side JavaScript you would use for the above functionality.
+- index.handlebars        == An example webpage for the browser-side use - keep in 'static' directory.
+- 404.handlebars          == 404 page for example - keep in 'static' directory.
 
 
 
